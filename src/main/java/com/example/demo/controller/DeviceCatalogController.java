@@ -17,7 +17,11 @@ public class DeviceCatalogController{
         return src.createItem(item);
     }
     @PutMapping("/PUT/{id}/active")
-    DeviceCatalogItem updateActiveStatus(@PathVariable Long id,@PathVariable boolean active){
-        return src.updateEmployeeStatus(id,active);
+    public DeviceCatalogItem updateActiveStatus(@PathVariable Long id,@PathVariable boolean active){
+        return src.updateActiveStatus(id,active);
+    }
+    @GetMapping("/GET")
+    public List<DeviceCatalogItem> getAllItems(){
+        return src.getAllItems();
     }
 }
