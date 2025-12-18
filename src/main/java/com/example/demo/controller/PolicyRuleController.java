@@ -20,7 +20,7 @@ public PolicyRuleController{
     public List<PolicyRule> getAllRules(){
         return src.getAllRules();
     }
-    @GetMapping
+    @GetMapping("/GET")
     public List<PolicyRule> getActiveRules(){
         return src.getActiveRules();
     }
