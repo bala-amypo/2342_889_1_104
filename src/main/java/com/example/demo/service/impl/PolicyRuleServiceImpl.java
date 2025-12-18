@@ -16,6 +16,14 @@ public PolicyRuleServiceImpl implements PolicyRuleService{
     }
     @Override
     public PolicyRule createRule(PolicyRule rule){
-        
+        return rep.save(rule);
+    }
+    @Override
+    public List<PolicyRule> getAllRules(){
+        return rep.findAll();
+    }
+    @Override
+    public List<PolicyRule> getActiveRules(){
+        return rep.findByActiveTrue();
     }
 }
