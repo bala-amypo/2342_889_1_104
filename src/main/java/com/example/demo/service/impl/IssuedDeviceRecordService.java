@@ -25,4 +25,7 @@ public IssuedDeviceServiceImpl implements IssuedDeviceService{
         }
         return null;
     }
+    public IssuedDeviceRecord getIssuedDevicesByEmployee(Long employeeId){
+        return rep.findById(employeeId).orElse(null);
+    }
 }
