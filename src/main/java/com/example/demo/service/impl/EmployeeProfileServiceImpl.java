@@ -9,7 +9,7 @@ import com.example.demo.repository.EmployeeProfileRepository;
 public class EmployeeProfileServiceImpl implements EmployeeProfileService{
     @Autowired
     private EmployeeProfileRepository rep;
-    public EmployeeProfileServiceImplw(EmployeeProfileRepository rep){
+    public EmployeeProfileServiceImpl(EmployeeProfileRepository rep){
         this.rep=rep;
     }
     @Override
