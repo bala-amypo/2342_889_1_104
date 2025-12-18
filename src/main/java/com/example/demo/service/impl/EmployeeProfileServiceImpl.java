@@ -32,7 +32,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
             existing.setjobRole(emp.getjobRole());
             existing.setactive(emp.getactive());
             existing.setcreatedAt(emp.getcreatedAt());
-            
+            return rep.save(existing);
         }
     }
 }
