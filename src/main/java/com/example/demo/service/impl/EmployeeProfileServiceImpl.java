@@ -22,9 +22,12 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
     public EmployeeProfile getValueById(Long id){
         return rep.findById(id).orElse(null);
     }
-
     @Override
-    public EmployeeProfile update(Long id,EmployeeProfile emp){
+    public List<EmployeeProfile> getAllEmployee(){
+        return rep.findAll();
+    }
+    @Override
+    public EmployeeProfile updateEmployeeStatus(Long id,boolean active){
         EmployeeProfile existing = getidval(id);
         existing.setfullName(emp.getfullName());
         existing.setemail(emp.getemail());
