@@ -10,5 +10,15 @@ import com.example.demo.service.EligibilityCheckService;
 public EligibilityCheckServiceImpl implements EligibilityCheckService{
     @Autowired
     private EligibilityCheckRecordRepository rep;
-    public EligibilityCheckServiceImpl ()
+    public EligibilityCheckServiceImpl (EligibilityCheckRecordRepository rep){
+        this.rep=rep;
+    }
+    @Override
+    public EligibilityCheckRecord validateEligibility(Long employeeId,Long deviceItemId){
+
+    }
+    @Override
+    public EligibilityCheckRecord getCheckByEmployee(Long employeeId){
+        
+    }
 }
