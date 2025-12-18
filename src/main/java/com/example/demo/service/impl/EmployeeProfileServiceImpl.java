@@ -18,7 +18,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
     }
 
     @Override
-    public EmployeeProfile id(Long id){
+    public EmployeeProfile getid(Long id){
         return rep.findById(id);
     }
 
