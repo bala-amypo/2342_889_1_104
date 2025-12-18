@@ -3,5 +3,5 @@ import com.example.demo.model.IssuedDeviceRecord;
 public interface IssuedDeviceRecordService{
     IssuedDeviceRecord issueDevice(IssuedDeviceRecord record);
     IssuedDeviceRecord returnDevice(Long recordId);
-    IssuedDeviceRecord getIssuedD
+    IssuedDeviceRecord getIssuedDevicesByEmployee(Long employeeId);
 }
