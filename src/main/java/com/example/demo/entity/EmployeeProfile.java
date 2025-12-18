@@ -8,7 +8,7 @@ import jakarta.validation.constraints.*;
 public class EmployeeProfile{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @NotBlank(message="Should not contain blank spaces")
     @Column(unique=true)
     private String employeeID;
@@ -16,7 +16,7 @@ public class EmployeeProfile{
     private String fullName;
     @Email(message="Invalid format")
     @NotBlank(message="Should not contain blank spaces")
-    @Column
+    @Column(unique=true)
     private String email;
     @NotBlank(message="Should not contain blank spaces")
     private String department;
@@ -24,3 +24,5 @@ public class EmployeeProfile{
     private String jobRole;
     private Boolean active;
     private LocalDateTime createAt;
+    public EmployeeProfile(Long id,String employeeId)
+}
