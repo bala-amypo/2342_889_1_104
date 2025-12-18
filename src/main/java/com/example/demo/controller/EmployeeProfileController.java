@@ -18,7 +18,7 @@ public class EmployeeProfileController{
     }
     @GetMapping("/getid/{id}")
     public EmployeeProfile getIdVal(@PathVariable Long id){
-        retun src.getidval(id);
+        return src.getidval(id);
     }
     @PutMapping("/update/{id}")
     public EmployeeProfile updateId(@PathVariable Long id,@RequestBody EmployeeProfile emp){

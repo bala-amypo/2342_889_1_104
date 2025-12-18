@@ -63,7 +63,7 @@ public class EmployeeProfile{
     public String getjobRole(){
         return jobRole;
     }
-    public void setdepartment(String jobRole){
+    public void setjobRole(String jobRole){
         this.jobRole=jobRole;
     }
     public Boolean getactive(){
@@ -72,10 +72,10 @@ public class EmployeeProfile{
     public void setactive(Boolean active){
         this.active=active;
     }
-    public LocalDateTime createdAt(){
+    public LocalDateTime getcreatedAt(){
         return createdAt;
     }
-    public void setactive(LocalDateTime createdAt){
+    public void setcreatedAt(LocalDateTime createdAt){
         this.createdAt=createdAt;
     }
 }
