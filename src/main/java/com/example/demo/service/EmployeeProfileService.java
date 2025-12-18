@@ -1,7 +1,8 @@
 package com.example.demo.service;
 import com.example.demo.model.EmployeeProfile;
 public interface EmployeeProfileService{
-    EmployeeProfile savedata(EmployeeProfile emp);
-    EmployeeProfile getidval(Long id);
-    EmployeeProfile update(Long id,EmployeeProfile emp);
+    EmployeeProfile createEmployee(EmployeeProfile employee);
+    EmployeeProfile getEmployeeById(Long id);
+    
+    EmployeeProfile updateEmployeeStatus(Long id,boolean active);
 }
