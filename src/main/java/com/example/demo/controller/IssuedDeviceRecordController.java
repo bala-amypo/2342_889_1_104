@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 import com.example.demo.model.IssuedDeviceRecord;
-import com.example.demo.service.;
+import com.example.demo.service.IssuedDeviceRecordService;
 
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -8,4 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/devices")
+@RequestMapping("/api/issued-devices")
+public class IssuedDeviceController{
+    @Autowired
+    IssuedDeviceRecordService src;
+    @PostMapping("/POST")
+    public IssuedDeviceRecord issueDevice(@RequestBody IssuedDeviceRecord record){
+        return src.issueDevice(record);
+    }
+    
+    @PutMapping("/PUT/{id}/")
+}
