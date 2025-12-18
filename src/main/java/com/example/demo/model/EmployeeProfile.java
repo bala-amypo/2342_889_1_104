@@ -10,14 +10,19 @@ public class EmployeeProfile{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     @Column(unique=true)
     private String employeeId;
+    @NotBlank
     private String fullName;
     @Email(message="Invalid format")
     @Column(unique=true)
+    @NotBlank
     private String email;
+    @NotBlank
     private String department;
     private String jobRole;
+    @NotNull
     private Boolean active;
     private LocalDateTime createdAt;
     public EmployeeProfile(){}

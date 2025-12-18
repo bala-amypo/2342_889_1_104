@@ -8,8 +8,10 @@ public class DeviceCatalogItem{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     @Column (unique=true)
     private String deviceCode;
+    @
     private String deviceType;
     private String model;
     @Max(1)
