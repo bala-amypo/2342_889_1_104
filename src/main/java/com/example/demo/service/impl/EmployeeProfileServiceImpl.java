@@ -20,7 +20,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
 
     @Override
     public EmployeeProfile getidval(Long id){
-        return rep.findById(id);
+        return rep.findById(id).orElse(null);
     }
 
     @Override
