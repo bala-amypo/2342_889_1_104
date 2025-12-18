@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 @RestController
-
+@RequestMapping("/Employee")
 public class EmployeeProfileController{
     @Autowired
     EmployeeProfileService src;
@@ -17,8 +17,11 @@ public class EmployeeProfileController{
         return src.savedata(emp);
     }
     @GetMapping("/getid/{id}")
-    public List<EmployeeProfile> getdata(){
-        retun src.retdata();
+    public EmployeeProfile getIdVal(@PathVariable Long id){
+        retun src.id(id);
     }
-    @GetMapping()
+    @PutMapping("/update/{id}")
+    public EmployeeProfile updateId(@PathVariable Long id,@RequestBody EmployeeProfile emp){
+        return src.update(id,st);
+    }
 }
