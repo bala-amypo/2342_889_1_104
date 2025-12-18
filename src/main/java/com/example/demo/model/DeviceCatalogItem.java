@@ -7,4 +7,14 @@ import jakarta.validation.constraints.*;
 public class DeviceCatalogItem{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+    @Column (unique=true)
+    private String deviceCode;
+    private String deviceType;
+    private String model;
+    @Max(1)
+    private Integer maxAllowedPerEmployee;
+    private Boolean active;
+    public DeviceCatalogItem(){
+    }
 }
