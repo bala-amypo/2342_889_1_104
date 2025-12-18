@@ -22,6 +22,6 @@ public class EmployeeProfileController{
     }
     @PutMapping("/update/{id}")
     public EmployeeProfile updateId(@PathVariable Long id,@RequestBody EmployeeProfile emp){
-        return src.update(id,st);
+        return src.update(id,emp);
     }
 }
