@@ -6,7 +6,7 @@ import com.example.demo.model.EmployeeProfile;
 import com.example.demo.repository.EmployeeProfileRepository;
 
 @Service
-public class
+public class EmployeeProfile
 private EmployeeProfileRepository rep;
 
 @Override
