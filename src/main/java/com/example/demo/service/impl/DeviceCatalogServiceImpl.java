@@ -19,11 +19,15 @@ public DeviceCatalogServiceImpl implements DeviceCatalogService{
     }
     @Override
     public DeviceCatalogItem updateActiveStatus(Long id,boolean active){
-        EmployeeProfile existing = rep.findById(id).orElse(null);
+        DeviceCatalogItem existing = rep.findById(id).orElse(null);
         if(existing!=null){
             existing.setActive(active);
             return rep.save(existing);
         }
         return null;
+    }
+    @Override
+    public List<DeviceCatalogItem> getAllItems(){
+        return rep.findAll();
     }
 }
