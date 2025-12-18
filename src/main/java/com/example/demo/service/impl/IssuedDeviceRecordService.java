@@ -18,6 +18,11 @@ public IssuedDeviceServiceImpl implements IssuedDeviceService{
         return rep.save(record);
     }
     public IssuedDeviceRecord returnDevice(Long recordId){
-        
+        IssuedDeviceRecord record=rep.findById(recordId).orElse(null);
+        if(record!=null&&record.getReturnedDate()==null){
+            record.setReturnedDate(LocalDate.now());
+            return rep.save(record);
+        }
+        return null;
     }
 }
