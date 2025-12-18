@@ -28,13 +28,11 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
     }
     @Override
     public EmployeeProfile updateEmployeeStatus(Long id,boolean active){
-        EmployeeProfile existing = getidval(id);
-        existing.setfullName(emp.getfullName());
-        existing.setemail(emp.getemail());
-        existing.setdepartment(emp.getdepartment());
-        existing.setjobRole(emp.getjobRole());
-        existing.setactive(emp.getactive());
-        existing.setcreatedAt(emp.getcreatedAt());
-        return rep.save(existing);
+        EmployeeProfile existing = rep.findById(id).orElse(null);
+        if(existing!=null){
+            existing.setActive(active);
+            return rep.save(existing);
+        }
+        return null;
     }
 }
