@@ -10,8 +10,11 @@ public class IssuedDeviceRecord{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private Long employeeId;
+    @NotNull
     private LocalDate issuedDate;
+    @NotNull
     private LocalDate returnedDate;
     private String ISSUED;
     private String RETURNED;

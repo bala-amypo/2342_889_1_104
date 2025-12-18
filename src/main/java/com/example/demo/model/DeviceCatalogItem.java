@@ -11,11 +11,14 @@ public class DeviceCatalogItem{
     @NotBlank
     @Column (unique=true)
     private String deviceCode;
-    @
+    @NotBlank
     private String deviceType;
+    @NotBlank
     private String model;
-    @Max(1)
+    @NotNull
+    @Min(1)
     private Integer maxAllowedPerEmployee;
+    @NotNull
     private Boolean active;
     public DeviceCatalogItem(){
     }
