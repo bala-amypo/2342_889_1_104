@@ -11,5 +11,13 @@ import java.util.*;
 @RequestMapping("/api/devices")
 public class EligibilityCheckController{
     @Autowired
-    
+    EligibilityCheckService src;
+    @PostMapping("/POST")
+    public EligibilityCheckRecord validateEligibility(@PathVariable Long employeeId,@PathVariable Long deviceItemId){
+        return src.validateEligibility(employeeId,deviceItemId);
+    }
+    @GetMapping
+    public EligibilityCheckRecord getCheckByEmployee(@PathVariable Long employeeId){
+        return src.getCheckByEmployee(employeeId);
+    }
 }
