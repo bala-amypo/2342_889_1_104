@@ -35,5 +35,40 @@ public class EmployeeProfile{
         this.active=active;
         this.createdAt=createdAt;
     }
-
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id=id;
+    }
+    public String getemployeeId(){
+        return employeeId;
+    }
+    public void setemployeeId(String employeeId){
+        this.employeeId=employeeId;
+    }
+    public String getfullName(){
+        return fullName;
+    }
+    public void setfullName(String fullName){
+        this.fullName=fullName;
+    }
+    public String getemail(){
+        return email;
+    }
+    public void setemail(String email){
+        this.email=email;
+    }
+    public String getemail(){
+        return email;
+    }
+    public void setemail(String email){
+        this.email=email;
+    }
+    public String getdepartment(){
+        return ;
+    }
+    public void setemail(String email){
+        this.email=email;
+    }
 }
