@@ -59,16 +59,28 @@ public class EmployeeProfile{
     public void setemail(String email){
         this.email=email;
     }
-    public String getemail(){
-        return email;
-    }
-    public void setemail(String email){
-        this.email=email;
-    }
     public String getdepartment(){
-        return ;
+        return department;
     }
-    public void setemail(String email){
-        this.email=email;
+    public void setdepartment(String department){
+        this.department=department;
+    }
+    public String getjobRole(){
+        return jobRole;
+    }
+    public void setdepartment(String jobRole){
+        this.jobRole=jobRole;
+    }
+    public Boolean getactive(){
+        return active;
+    }
+    public void setactive(Boolean active){
+        this.active=active;
+    }
+    public LocalDateTime createdAt(){
+        return createdAt;
+    }
+    public void setactive(LocalDateTime createdAt){
+        this.createdAt=createdAt;
     }
 }
