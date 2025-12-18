@@ -21,8 +21,8 @@ public class IssuedDeviceController{
     public IssuedDeviceRecord returnDevice(@PathVariable Long recordId){
         return src.returnDevice(recordId);
     }
-    @GetMapping(/Get/employee/{employeeId})
+    @GetMapping("/Get/employee/{employeeId}")
     public IssuedDeviceRecord getIssuedDevicesByEmployee(@PathVariable Long employeeId){
-        return src.getIssuedDevicesByEmployee(employeeId)
+        return src.getIssuedDevicesByEmployee(employeeId);
     }
 }

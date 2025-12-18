@@ -14,6 +14,14 @@ public PolicyRuleController{
     PolicyRuleService src;
     @PostMapping("/POST")
     public PolicyRule createRule(@RequestBody PolicyRule rule){
-        return src.create
+        return src.createRule(rule);
+    }
+    @GetMapping("/GET/active")
+    public List<PolicyRule> getAllRules(){
+        return src.getAllRules();
+    }
+    @GetMapping
+    public List<PolicyRule> getActiveRules(){
+        return src.getActiveRules();
     }
 }
