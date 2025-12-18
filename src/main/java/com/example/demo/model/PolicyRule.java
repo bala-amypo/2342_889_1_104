@@ -1,7 +1,6 @@
 package com.example.demo.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name="Policy_Rule")
