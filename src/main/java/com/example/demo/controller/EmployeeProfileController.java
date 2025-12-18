@@ -13,8 +13,12 @@ public class EmployeeProfileController{
     @Autowired
     EmployeeProfileService src;
     @PostMapping("/post")
-    public Employee_profile postdata(@RequestBody Employee_profile emp){
+    public EmployeeProfile postdata(@RequestBody EmployeeProfile emp){
         return src.savedata(emp);
-    }''
+    }
+    @GetMapping("/getid/{id}")
+    public List<EmployeeProfile> getdata(){
+        retun src.retdata();
+    }
     @GetMapping()
 }
