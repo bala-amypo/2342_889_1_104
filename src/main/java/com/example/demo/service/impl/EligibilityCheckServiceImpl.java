@@ -17,14 +17,37 @@ public EligibilityCheckServiceImpl implements EligibilityCheckService{
         this.rep=rep;
     }
     @Override
-    public EligibilityCheckRecord validateEligibility(Long employeeId,Long deviceItemId){
-        EligibilityCheckRecord record=new EligibilityCheckRecord();
+    public EligibilityCheckRecord validateEligibility(Long employeeId, Long deviceItemId) {
+
+        EligibilityCheckRecord record = new EligibilityCheckRecord();
         record.setEmployeeId(employeeId);
         record.setDeviceItemId(deviceItemId);
-        EmployeeRepository employee=employeeRepository.findById(employeeId).orElse(null);
-    }
-    @Override
-    public EligibilityCheckRecord getCheckByEmployee(Long employeeId){
 
+        EmployeeProfile employee = employeeRepository.findById(employeeId).orElse(null);
+
+        if (employee == null || Boolean.FALSE.equals(employee.getActive())) {
+            record.setEligible(false);
+            record.setReason("Employee not active or not found");
+            return record;
+        }
+
+        long issuedCount =
+                issuedDeviceRecordRepository
+                        .countByEmployeeIdAndReturnedDateIsNull(employeeId);
+
+        if (issuedCount >= 1) {
+            record.setEligible(false);
+            record.setReason("Maximum devices already issued");
+        } else {
+            record.setEligible(true);
+            record.setReason("Eligible for device issuance");
+        }
+
+        return record;
+    }
+
+    @Override
+    public List<EligibilityCheckRecord> getCheckByEmployee(Long employeeId) {
+        return issuedDeviceRecordRepository.findEligibilityChecksByEmployeeId(employeeId);
     }
 }
