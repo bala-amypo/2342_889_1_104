@@ -10,5 +10,14 @@ import java.util.*;
 @RestController
 @RequestMapping("/api/devices")
 public class DeviceCatalogController{
-    @A
+    @Autowired
+    DeviceCatalogService src;
+    @PostMapping("/POST")
+    public DeviceCatalogItem createItem(@RequestBody DeviceCatalogItem item){
+        return src.createItem(item);
+    }
+    @PutMapping("/PUT/{id}/active")
+    DeviceCatalogItem updateActiveStatus(@PathVariable Long id,@PathVariable boolean active){
+        return src.updateEmployeeStatus(id,active);
+    }
 }

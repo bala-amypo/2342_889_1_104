@@ -15,7 +15,7 @@ public DeviceCatalogServiceImpl implements DeviceCatalogService{
     }
     @Override
     public DeviceCatalogItem createItem(DeviceCatalogItem item{
-        return src.save(item);
+        return rep.save(item);
     }
     @Override
     public DeviceCatalogItem updateActiveStatus(Long id,boolean active){
