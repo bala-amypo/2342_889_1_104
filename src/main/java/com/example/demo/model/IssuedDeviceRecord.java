@@ -11,12 +11,9 @@ public class IssuedDeviceRecord{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private Long employeeId;
-    private String fullName;
-    @Email(message="Invalid format")
-    @Column(unique=true)
-    private String email;
-    private String department;
-    private String jobRole;
-    private Boolean active;
-    private LocalDateTime createdAt;
-    public EmployeeProfile(){}
+    private LocalDate issuedDate;
+    private LocalDate returnedDate;
+    private String ISSUED;
+    private String RETURNED;
+    public IssuedDeviceRecord(){}
+}
