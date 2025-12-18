@@ -14,12 +14,12 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
         this.rep=rep;
     }
     @Override
-    public EmployeeProfile savedata(EmployeeProfile emp){
+    public EmployeeProfile createEmployee(EmployeeProfile employee){
         return rep.save(emp);
     }
 
     @Override
-    public EmployeeProfile getidval(Long id){
+    public EmployeeProfile getValueById(Long id){
         return rep.findById(id).orElse(null);
     }
 
