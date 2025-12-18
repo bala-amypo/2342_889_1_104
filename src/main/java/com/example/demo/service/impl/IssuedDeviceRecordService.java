@@ -17,4 +17,7 @@ public IssuedDeviceServiceImpl implements IssuedDeviceService{
     public IssuedDeviceRecord issueDevice(IssuedDeviceRecord record){
         return rep.save(record);
     }
+    public IssuedDeviceRecord returnDevice(Long recordId){
+        
+    }
 }
