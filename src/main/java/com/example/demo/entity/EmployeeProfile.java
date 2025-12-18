@@ -11,7 +11,7 @@ public class EmployeeProfile{
     private Long id;
     @NotBlank(message="Should not contain blank spaces")
     @Column(unique=true)
-    private String employeeID;
+    private String employeeId;
     @NotBlank(message="Should not contain blank spaces")
     private String fullName;
     @Email(message="Invalid format")
@@ -23,6 +23,17 @@ public class EmployeeProfile{
     @NotBlank(message="Should not contain blank spaces")
     private String jobRole;
     private Boolean active;
-    private LocalDateTime createAt;
-    public EmployeeProfile(Long id,String employeeId)
+    private LocalDateTime createdAt;
+    public EmployeeProfile(){}
+    public EmployeeProfile(Long id,String employeeId,String fullName,String email,String department,String jobRole,Boolean active,LocalDateTime createdAt){
+        this.id=id;
+        this.employeeId=employeeId;
+        this.fullName=fullName;
+        this.email=email;
+        this.department=department;
+        this.jobRole=jobRole;
+        this.active=active;
+        this.createdAt=createdAt;
+    }
+
 }
