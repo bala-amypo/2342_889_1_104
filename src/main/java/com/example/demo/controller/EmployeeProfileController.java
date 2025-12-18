@@ -14,16 +14,18 @@ public class EmployeeProfileController{
     EmployeeProfileService src;
     @PostMapping("/POST")
     public EmployeeProfile createEmployee(@RequestBody EmployeeProfile employee){
-        return src.savedata(employee);
+        return src.createEmployee(employee);
     }
     @GetMapping("/GET/{id}")
-    public EmployeeProfile getIdVal(@PathVariable Long id){
-        return src.getidval(id);
+    public EmployeeProfile getEmployeeById(@PathVariable Long id){
+        return src.getEmployeeById(id);
     }
-    public List<EmployeeProfile> getAllEmployees(){
-        return sr
+    @GetMapping
+    public List<EmployeeProfile> getAllEmployee(){
+        return src.getAllEmployee();
+    }
     @PutMapping("/PUT/{id}/status")
-    public EmployeeProfile updateId(@PathVariable Long id,@RequestBody EmployeeProfile emp){
-        return src.update(id,emp);
+    public EmployeeProfile updateEmployeeStatus(@PathVariable Long id,@PathVariable boolean active){
+        return src.updateEmployeeStatus(id,active);
     }
 }
