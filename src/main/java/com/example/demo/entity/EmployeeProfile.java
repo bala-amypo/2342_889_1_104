@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 @Entity
-@Table(name="Student")
+@Table(name="Employee_profile")
 
 public class EmployeeProfile{
     @Id
