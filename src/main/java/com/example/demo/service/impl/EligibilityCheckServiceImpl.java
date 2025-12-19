@@ -6,6 +6,7 @@ import com.example.demo.model.EligibilityCheckRecord;
 import com.example.demo.repository.EligibilityCheckRecordRepository;
 import com.example.demo.service.EligibilityCheckService;
 import com.example.demo.repository.EmployeeProfileRepository;
+import com.example.demo.repository.IssuedDeviceRecordRepository;
 
 @Service
 public class EligibilityCheckServiceImpl implements EligibilityCheckService{
@@ -36,9 +37,10 @@ public class EligibilityCheckServiceImpl implements EligibilityCheckService{
                         .countByEmployeeIdAndReturnedDateIsNull(employeeId);
 
         if (issuedCount >= 1) {
-            record.setEligible(false);
+            record.setisEligible(false);
             record.setReason("Maximum devices already issued");
-        } else {
+        } 
+        else {
             record.setEligible(true);
             record.setReason("Eligible for device issuance");
         }
@@ -47,7 +49,7 @@ public class EligibilityCheckServiceImpl implements EligibilityCheckService{
     }
 
     @Override
-    public List<EligibilityCheckRecord> getCheckByEmployee(Long employeeId) {
+    public EligibilityCheckRecord getCheckByEmployee(Long employeeId) {
         return issuedDeviceRecordRepository.findEligibilityChecksByEmployeeId(employeeId);
     }
 }
