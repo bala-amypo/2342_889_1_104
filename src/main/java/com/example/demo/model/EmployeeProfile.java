@@ -24,6 +24,7 @@ public class EmployeeProfile{
     @Required
     private String department;
     @Required
+    //ADMIN DEVELOPER MANAGER STAFF
     private String jobRole;
     @NotNull
     private Boolean active;
