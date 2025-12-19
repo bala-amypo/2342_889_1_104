@@ -30,7 +30,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService{
     public EmployeeProfile updateEmployeeStatus(Long id,boolean active){
         EmployeeProfile existing = rep.findById(id).orElse(null);
         if(existing!=null){
-            existing.setActive(true);
+            existing.setactive(active);
             return rep.save(existing);
         }
         return null;

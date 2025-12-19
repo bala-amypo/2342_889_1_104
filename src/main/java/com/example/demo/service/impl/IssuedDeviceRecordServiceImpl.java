@@ -9,8 +9,8 @@ import com.example.demo.service.IssuedDeviceRecordService;
 @Service
 public class IssuedDeviceRecordServiceImpl implements IssuedDeviceRecordService{
     @Autowired
-    private IssuedDeviceRecordRepository rep;
-    public IssuedDeviceServiceImpl(IssuedDeviceRecordRepository rep){
+    private final IssuedDeviceRecordRepository rep;
+    public IssuedDeviceRecordServiceImpl(IssuedDeviceRecordRepository rep){
         this.rep=rep;
     }
     @Override
