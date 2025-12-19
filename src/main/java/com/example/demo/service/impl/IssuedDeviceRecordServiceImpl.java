@@ -18,13 +18,8 @@ public class IssuedDeviceServiceImpl implements IssuedDeviceService{
         return rep.save(record);
     }
     @Override
-    public IssuedDeviceRecord returnDevice(Long recordId){
-        IssuedDeviceRecord record=rep.findById(recordId).orElse(null);
-        if(record!=null&&record.getReturnedDate()==null){
-            record.setReturnedDate(LocalDate.now());
-            return rep.save(record);
-        }
-        return null;
+    public IssuedDeviceRecord returnDevice(Long id){
+        return rep.findById(id).orElse(null);
     }
     @Override
     public IssuedDeviceRecord getIssuedDevicesByEmployee(Long employeeId){
