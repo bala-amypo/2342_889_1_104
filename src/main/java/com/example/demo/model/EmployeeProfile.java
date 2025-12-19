@@ -8,10 +8,11 @@ import java.time.LocalDateTime;
 
 public class EmployeeProfile{
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    @NotBlank
+    @Required
     @Column(unique=true)
+    //businesskey
     private String employeeId;
     @NotBlank
     private String fullName;
