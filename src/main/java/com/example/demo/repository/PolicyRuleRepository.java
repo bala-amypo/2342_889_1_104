@@ -4,4 +4,5 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.PolicyRule;
 @Repository
 public interface PolicyRuleRepository extends JpaRepository<PolicyRule,String>{
+    List<PolicyRule> findByActiveTrue();
 }
