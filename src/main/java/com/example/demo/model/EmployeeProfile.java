@@ -26,8 +26,9 @@ public class EmployeeProfile{
     @Required
     //ADMIN DEVELOPER MANAGER STAFF
     private String jobRole;
-    @NotNull
+    //default:true
     private Boolean active;
+    //autogenerate
     private LocalDateTime createdAt;
     public EmployeeProfile(){}
     public EmployeeProfile(Long id,String employeeId,String fullName,String email,String department,String jobRole,Boolean active,LocalDateTime createdAt){
