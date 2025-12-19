@@ -9,7 +9,7 @@ import com.example.demo.service.DeviceCatalogService;
 @Service
 public class DeviceCatalogServiceImpl implements DeviceCatalogService{
     @Autowired
-    private DeviceCatalogItemRepository rep;
+    private final DeviceCatalogItemRepository rep;
     public DeviceCatalogServiceImpl(DeviceCatalogItemRepository rep){
         this.rep=rep;
     }
