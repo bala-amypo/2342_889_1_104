@@ -10,20 +10,15 @@ public class EmployeeProfile{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    @Required
     @Column(unique=true)
     //businesskey
     private String employeeId;
     @NotBlank
-    @Required
     private String fullName;
     @Email(message="Invalid format")
     @Column(unique=true)
-    @Required
     private String email;
-    @Required
     private String department;
-    @Required
     //ADMIN DEVELOPER MANAGER STAFF
     private String jobRole;
     //default:true
