@@ -15,13 +15,15 @@ public class EmployeeProfile{
     //businesskey
     private String employeeId;
     @NotBlank
+    @Required
     private String fullName;
     @Email(message="Invalid format")
     @Column(unique=true)
-    @NotBlank
+    @Required
     private String email;
-    @NotBlank
+    @Required
     private String department;
+    @Required
     private String jobRole;
     @NotNull
     private Boolean active;
