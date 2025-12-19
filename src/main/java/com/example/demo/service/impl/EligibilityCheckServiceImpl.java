@@ -11,7 +11,7 @@ import com.example.demo.repository.IssuedDeviceRecordRepository;
 @Service
 public class EligibilityCheckServiceImpl implements EligibilityCheckService{
     @Autowired
-    EmployeeProfileRepository rep;
+    EmployeeProfileRepository record;
     @Autowired
     private EligibilityCheckRecordRepository rep;
     public EligibilityCheckServiceImpl (EligibilityCheckRecordRepository rep){

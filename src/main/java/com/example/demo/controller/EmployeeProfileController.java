@@ -21,8 +21,8 @@ public class EmployeeProfileController{
         return src.getEmployeeById(id);
     }
     @GetMapping
-    public List<EmployeeProfile> getAllEmployee(){
-        return src.getAllEmployee();
+    public List<EmployeeProfile> getAllEmployees(){
+        return src.getAllEmployees();
     }
     @PutMapping("/PUT/{id}/status")
     public EmployeeProfile updateEmployeeStatus(@PathVariable Long id,@PathVariable boolean active){
