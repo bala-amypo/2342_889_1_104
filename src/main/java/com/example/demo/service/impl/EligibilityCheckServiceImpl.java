@@ -8,7 +8,7 @@ import com.example.demo.service.EligibilityCheckService;
 import com.example.demo.repository.EmployeeProfileRepository;
 
 @Service
-public EligibilityCheckServiceImpl implements EligibilityCheckService{
+public class EligibilityCheckServiceImpl implements EligibilityCheckService{
     @Autowired
     EmployeeProfileRepository rep;
     @Autowired

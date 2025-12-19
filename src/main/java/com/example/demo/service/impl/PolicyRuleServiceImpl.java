@@ -8,7 +8,7 @@ import com.example.demo.service.PolicyRuleService;
 
 
 @Service
-public PolicyRuleServiceImpl implements PolicyRuleService{
+public class PolicyRuleServiceImpl implements PolicyRuleService{
     @Autowired
     private PolicyRuleRepository rep;
     public PolicyRuleServiceImpl(PolicyRuleRepository rep){

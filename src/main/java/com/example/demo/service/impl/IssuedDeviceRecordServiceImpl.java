@@ -7,7 +7,7 @@ import com.example.demo.repository.IssuedDeviceRecordRepository;
 import com.example.demo.service.IssuedDeviceService;
 
 @Service
-public IssuedDeviceServiceImpl implements IssuedDeviceService{
+public class IssuedDeviceServiceImpl implements IssuedDeviceService{
     @Autowired
     private IssuedDeviceRecordRepository rep;
     public IssuedDeviceServiceImpl(IssuedDeviceRecordRepository rep){
