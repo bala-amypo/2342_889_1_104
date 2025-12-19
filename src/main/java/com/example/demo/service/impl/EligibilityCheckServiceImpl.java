@@ -41,7 +41,7 @@ public class EligibilityCheckServiceImpl implements EligibilityCheckService{
             record.setReason("Maximum devices already issued");
         } 
         else {
-            record.setEligible(true);
+            record.setisEligible(true);
             record.setReason("Eligible for device issuance");
         }
 

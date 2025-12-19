@@ -9,7 +9,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/issued-devices")
-public class IssuedDeviceController{
+public class IssuedDeviceRecordController{
     @Autowired
     IssuedDeviceRecordService src;
     @PostMapping("/POST")
