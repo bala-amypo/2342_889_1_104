@@ -9,21 +9,21 @@ import com.example.demo.service.EmployeeProfileService;
 @Service
 public class EmployeeProfileServiceImpl implements EmployeeProfileService{
     @Autowired
-    private EmployeeProfileRepository rep;
+    private final EmployeeProfileRepository rep;
     public EmployeeProfileServiceImpl(EmployeeProfileRepository rep){
         this.rep=rep;
     }
     @Override
     public EmployeeProfile createEmployee(EmployeeProfile employee){
-        return rep.save(emp);
+        return rep.save(employee);
     }
 
     @Override
-    public EmployeeProfile getValueById(Long id){
+    public EmployeeProfile getEmployeeById(Long id){
         return rep.findById(id).orElse(null);
     }
     @Override
-    public List<EmployeeProfile> getAllEmployee(){
+    public List<EmployeeProfile> getAllEmployees(){
         return rep.findAll();
     }
     @Override
