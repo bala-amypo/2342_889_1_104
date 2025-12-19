@@ -21,3 +21,8 @@
 //         return src.getCheckByEmployee(employeeId);
 //     }
 // }
+public class EligibilityCheckController{
+    public void Eligibility(){
+        
+    }
+}
