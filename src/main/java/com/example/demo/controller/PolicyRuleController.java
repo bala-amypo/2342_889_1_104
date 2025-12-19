@@ -9,7 +9,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/policy-rules")
-public PolicyRuleController{
+public class PolicyRuleController{
     @Autowired
     PolicyRuleService src;
     @PostMapping("/POST")

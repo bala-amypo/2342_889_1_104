@@ -14,7 +14,7 @@ public class DeviceCatalogServiceImpl implements DeviceCatalogService{
         this.rep=rep;
     }
     @Override
-    public DeviceCatalogItem createItem(DeviceCatalogItem item{
+    public DeviceCatalogItem createItem(DeviceCatalogItem item){
         return rep.save(item);
     }
     @Override
