@@ -1,5 +1,5 @@
-blic class GlobalException{
-    public void Global()){
+public class EligibilityCheckServiceImpl{
+    public void CheckService(){
         
     }
 }
