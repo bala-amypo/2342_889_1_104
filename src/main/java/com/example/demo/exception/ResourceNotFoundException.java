@@ -1,5 +1,5 @@
-blic class ResourceNotFoundException{
-    public void Resource()){
+public class ResourceNotFoundException{
+    public void Resource(){
         
     }
 }

@@ -1,5 +1,5 @@
-blic class JwtTokenProvider{
-    public void Token()){
+public class JwtTokenProvider{
+    public void Token(){
         
     }
 }

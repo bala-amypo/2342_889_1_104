@@ -1,5 +1,5 @@
-blic class SecurityConfig{
-    public void Security()){
+public class SecurityConfig{
+    public void Security(){
         
     }
 }

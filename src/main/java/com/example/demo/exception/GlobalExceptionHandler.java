@@ -1,5 +1,5 @@
-public class GlobalException{
-    public void Global()){
+public class GlobalExceptionH{
+    public void Global(){
         
     }
 }

@@ -1,5 +1,5 @@
-blic class CustomerUserDetailsService{
-    public void CustomerUser()){
+public class CustomerUserDetailsService{
+    public void CustomerUser(){
         
     }
 }

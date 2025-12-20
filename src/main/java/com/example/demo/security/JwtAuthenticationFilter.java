@@ -1,5 +1,5 @@
-blic class JwtAuthenticationFilter{
-    public void Filter()){
+public class JwtAuthenticationFilter{
+    public void Filter(){
         
     }
 }
