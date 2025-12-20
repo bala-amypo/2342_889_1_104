@@ -6,11 +6,11 @@ import com.example.demo.model.EligibilityCheckRecord;
 import com.example.demo.repository.EligibilityCheckRecordRepository;
 import com.example.demo.service.EligibilityCheckRecordService;
 
-Service
+@Service
 public class EligibilityCheckServiceImpl implements EligibilityCheckService{
     @Autowired
     private final EligibilityCheckRecordRepository rep;
-    public EmployeeProfileServiceImpl(EligibilityCheckRecordRepository rep){
+    public EligibilityCheckServiceImpl(EligibilityCheckRecordRepository rep){
         this.rep=rep;
     }
     @Override
