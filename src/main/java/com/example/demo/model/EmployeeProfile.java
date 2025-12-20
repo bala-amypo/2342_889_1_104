@@ -19,20 +19,26 @@ public class EmployeeProfile{
     private String department;
     @Column(nullable=false)
     private String jobRole;
-    //default:true
     private Boolean active;
-    //autogenerate
     private LocalDateTime createdAt;
     public EmployeeProfile(){}
     public EmployeeProfile(Long id,String employeeId,String fullName,String email,String department,String jobRole,Boolean active,LocalDateTime createdAt){
-        this.id=id;
         this.employeeId=employeeId;
         this.fullName=fullName;
         this.email=email;
         this.department=department;
         this.jobRole=jobRole;
         this.active=active;
-        this.createdAt=createdAt;
+    }
+    @PrePersist
+    void onCreate(){
+        this.createdAt=LocalDateTime.now();
+        if(this.jobRole==null){
+            this.jobRole="STAFF";
+        }
+        if(this.active==null){
+            this.active=true;
+        }
     }
     public Long getId(){
         return id;

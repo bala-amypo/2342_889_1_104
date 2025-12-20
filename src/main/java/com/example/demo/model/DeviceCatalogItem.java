@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 @Entity
-@Table(name="Device_CatalogItem")
+@Table(name="Device_CatalogItem",uniqueConstraints(columnNames="employeeId"))
 public class DeviceCatalogItem{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
