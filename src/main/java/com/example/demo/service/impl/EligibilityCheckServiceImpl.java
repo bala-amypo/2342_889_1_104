@@ -15,7 +15,7 @@ public class EligibilityCheckServiceImpl implements EligibilityCheckService{
     }
     @Override
     public EligibilityCheckRecord validateEligibility(Long employeeId,Long deviceItemId){
-        
+        return null;
     }
     @Override
     public EligibilityCheckRecord getCheckByEmployee(Long employeeId){

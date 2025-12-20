@@ -1,28 +1,23 @@
-// package com.example.demo.controller;
-// import com.example.demo.model.EligibilityCheckRecord;
-// import com.example.demo.service.EligibilityCheckService;
+package com.example.demo.controller;
+import com.example.demo.model.EligibilityCheckRecord;
+import com.example.demo.service.EligibilityCheckService;
 
-// import org.springframework.http.*;
-// import org.springframework.web.bind.annotation.*;
-// import org.springframework.beans.factory.annotation.Autowired;
-// import java.util.*;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.*;
 
-// @RestController
-// @RequestMapping("/api/devices")
-// public class EligibilityCheckController{
-//     @Autowired
-//     EligibilityCheckService src;
-//     @PostMapping("/POST")
-//     public EligibilityCheckRecord validateEligibility(@PathVariable Long employeeId,@PathVariable Long deviceItemId){
-//         return src.validateEligibility(employeeId,deviceItemId);
-//     }
-//     @GetMapping
-//     public EligibilityCheckRecord getCheckByEmployee(@PathVariable Long employeeId){
-//         return src.getCheckByEmployee(employeeId);
-//     }
-// }
+@RestController
+@RequestMapping("/api/devices")
 public class EligibilityCheckController{
-    public void Eligibility(){
-        
+    @Autowired
+    EligibilityCheckService src;
+    @PostMapping("/POST")
+    public EligibilityCheckRecord validateEligibility(@PathVariable Long employeeId,@PathVariable Long deviceItemId){
+        return src.validateEligibility(employeeId,deviceItemId);
+    }
+    @GetMapping
+    public EligibilityCheckRecord getCheckByEmployee(@PathVariable Long employeeId){
+        return src.getCheckByEmployee(employeeId);
     }
 }
