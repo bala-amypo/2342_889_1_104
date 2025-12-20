@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/devices")
+@RequestMapping("/api/eligibility")
 public class EligibilityCheckController{
     @Autowired
     EligibilityCheckService src;
