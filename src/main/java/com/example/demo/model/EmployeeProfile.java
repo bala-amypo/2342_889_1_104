@@ -4,17 +4,19 @@ import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="Employee_profile",uniqueConstraints(columnNames="employeeId"),uniqueConstraints(columnNames="email"))
+@Table(name="Employee_profile")
 
 public class EmployeeProfile{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Column(nullable=false)
+    @Column (unique=true)
     private String employeeId;
     @Column(nullable=false)
     private String fullName;
     @Column(nullable=false)
+    @Column (unique=true)
     private String email;
     private String department;
     @Column(nullable=false)
