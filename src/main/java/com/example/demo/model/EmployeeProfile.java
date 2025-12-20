@@ -4,22 +4,20 @@ import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="Employee_profile")
+@Table(name="Employee_profile",uniqueConstraints(columnNames="employeeId"),uniqueConstraints(columnNames="email"))
 
 public class EmployeeProfile{
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    @Column(unique=true)
-    //businesskey
+    @Column(nullable=false)
     private String employeeId;
-    @NotBlank
+    @Column(nullable=false)
     private String fullName;
-    @Email(message="Invalid format")
-    @Column(unique=true)
+    @Column(nullable=false)
     private String email;
     private String department;
-    //ADMIN DEVELOPER MANAGER STAFF
+    @Column(nullable=false)
     private String jobRole;
     //default:true
     private Boolean active;
