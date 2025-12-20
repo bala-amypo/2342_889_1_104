@@ -10,12 +10,12 @@ public class EmployeeProfile{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable=false)
+    @NotBlank
     @Column (unique=true)
     private String employeeId;
     @Column(nullable=false)
     private String fullName;
-    @Column(nullable=false)
+    @NotBlank
     @Column (unique=true)
     private String email;
     private String department;
