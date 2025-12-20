@@ -35,7 +35,7 @@ public class DeviceCatalogItem{
             this.active=true;
         }
     }
-    public Long getId() {
+    public Long getid() {
         return id;
     }
     public void setId(Long id) {

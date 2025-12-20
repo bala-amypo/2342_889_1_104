@@ -42,10 +42,10 @@ public class EmployeeProfile{
             this.active=true;
         }
     }
-    public Long getId(){
+    public Long getid(){
         return id;
     }
-    public void setId(Long id){
+    public void setid(Long id){
         this.id=id;
     }
     public String getemployeeId(){
