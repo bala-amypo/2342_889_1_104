@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 @Entity
-@Table(name="Device_CatalogItem",uniqueConstraints(columnNames="employeeId"))
+@Table(name="Device_CatalogItem",uniqueConstraints(columnNames="deviceCode"))
 public class DeviceCatalogItem{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,12 +24,16 @@ public class DeviceCatalogItem{
     }
     public DeviceCatalogItem(Long id, String deviceCode, String deviceType, String model,
             @Max(1) Integer maxAllowedPerEmployee, Boolean active) {
-        this.id = id;
         this.deviceCode = deviceCode;
         this.deviceType = deviceType;
         this.model = model;
         this.maxAllowedPerEmployee = maxAllowedPerEmployee;
-        this.active = active;
+    }
+    @PrePersist
+    void onCreate(){
+        if(this.active==null){
+            this.active=true;
+        }
     }
     public Long getId() {
         return id;
