@@ -1,4 +1,4 @@
-public class GlobalExceptionH{
+public class GlobalExceptionHandler{
     public void Global(){
         
     }
