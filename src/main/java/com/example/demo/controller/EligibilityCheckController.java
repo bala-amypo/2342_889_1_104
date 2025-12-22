@@ -16,7 +16,7 @@ public class EligibilityCheckController{
     public EligibilityCheckRecord validateEligibility(@PathVariable Long employeeId,@PathVariable Long deviceItemId){
         return src.validateEligibility(employeeId,deviceItemId);
     }
-    @GetMapping
+    @GetMapping("/GET")
     public EligibilityCheckRecord getCheckByEmployee(@PathVariable Long employeeId){
         return src.getCheckByEmployee(employeeId);
     }

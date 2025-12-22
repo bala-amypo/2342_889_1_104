@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/Employee")
+@RequestMapping("/api/employees")
 public class EmployeeProfileController{
     @Autowired
     EmployeeProfileService src;
