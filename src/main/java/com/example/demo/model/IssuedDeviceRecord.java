@@ -18,14 +18,12 @@ public class IssuedDeviceRecord{
     private LocalDate returnedDate;
     private String status;
     public IssuedDeviceRecord(){}
-    public IssuedDeviceRecord(Long id, Long employeeId, LocalDate issuedDate, LocalDate returnedDate, String iSSUED,
-            String rETURNED) {
+    public IssuedDeviceRecord(Long id, Long employeeId, LocalDate issuedDate, LocalDate returnedDate, String  status) {
         this.id = id;
         this.employeeId = employeeId;
         this.issuedDate = issuedDate;
         this.returnedDate = returnedDate;
-        ISSUED = iSSUED;
-        RETURNED = rETURNED;
+        this.status=status;
     }
     public Long getId() {
         return id;
@@ -57,10 +55,5 @@ public class IssuedDeviceRecord{
     public void setStatus(String status) {
         this.status=staus;
     }
-    public String getRETURNED() {
-        return RETURNED;
-    }
-    public void setRETURNED(String rETURNED) {
-        RETURNED = rETURNED;
-    }
+    
 }
