@@ -12,7 +12,7 @@ import java.util.*;
 public class IssuedDeviceRecordController{
     @Autowired
     IssuedDeviceRecordService src;
-    @PostMapping("/POST")
+    @PostMapping("POST/")
     public IssuedDeviceRecord issueDevice(@RequestBody IssuedDeviceRecord record){
         return src.issueDevice(record);
     }

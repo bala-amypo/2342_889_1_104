@@ -12,11 +12,11 @@ import java.util.*;
 public class EligibilityCheckController{
     @Autowired
     EligibilityCheckService src;
-    @PostMapping("POST")
+    @PostMapping("POST/validate/{employeeId}/{deviceItemId}")
     public EligibilityCheckRecord validateEligibility(@PathVariable Long employeeId,@PathVariable Long deviceItemId){
         return src.validateEligibility(employeeId,deviceItemId);
     }
-    @GetMapping("/GET")
+    @GetMapping("GET/employee/{employeeId}")
     public EligibilityCheckRecord getCheckByEmployee(@PathVariable Long employeeId){
         return src.getCheckByEmployee(employeeId);
     }
