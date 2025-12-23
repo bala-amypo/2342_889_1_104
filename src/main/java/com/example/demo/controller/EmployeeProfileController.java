@@ -12,11 +12,11 @@ import java.util.*;
 public class EmployeeProfileController{
     @Autowired
     EmployeeProfileService src;
-    @PostMapping("/POST")
+    @PostMapping
     public EmployeeProfile createEmployee(@RequestBody EmployeeProfile employee){
         return src.createEmployee(employee);
     }
-    @GetMapping("/GET/{id}")
+    @GetMapping("/{id}")
     public EmployeeProfile getEmployeeById(@PathVariable Long id){
         return src.getEmployeeById(id);
     }
@@ -24,7 +24,7 @@ public class EmployeeProfileController{
     public List<EmployeeProfile> getAllEmployees(){
         return src.getAllEmployees();
     }
-    @PutMapping("/PUT/{id}/status")
+    @PutMapping("/{id}/status")
     public EmployeeProfile updateEmployeeStatus(@PathVariable Long id,@PathVariable boolean active){
         return src.updateEmployeeStatus(id,active);
     }

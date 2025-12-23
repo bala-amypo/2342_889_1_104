@@ -12,15 +12,15 @@ import java.util.*;
 public class PolicyRuleController{
     @Autowired
     PolicyRuleService src;
-    @PostMapping("/POST")
+    @PostMapping
     public PolicyRule createRule(@RequestBody PolicyRule rule){
         return src.createRule(rule);
     }
-    @GetMapping("/GET/active")
+    @GetMapping("/active")
     public List<PolicyRule> getAllRules(){
         return src.getAllRules();
     }
-    @GetMapping("/GET")
+    @GetMapping
     public List<PolicyRule> getActiveRules(){
         return src.getActiveRules();
     }

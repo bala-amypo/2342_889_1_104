@@ -17,11 +17,11 @@ public class IssuedDeviceRecordController{
         return src.issueDevice(record);
     }
     
-    @PutMapping("/PUT/{id}/return")
+    @PutMapping("{id}/return")
     public IssuedDeviceRecord returnDevice(@PathVariable Long recordId){
         return src.returnDevice(recordId);
     }
-    @GetMapping("/GET/employee/{employeeId}")
+    @GetMapping("employee/{employeeId}")
     public IssuedDeviceRecord getIssuedDevicesByEmployee(@PathVariable Long employeeId){
         return src.getIssuedDevicesByEmployee(employeeId);
     }
