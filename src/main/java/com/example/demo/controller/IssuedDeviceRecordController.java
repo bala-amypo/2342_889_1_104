@@ -12,16 +12,16 @@ import java.util.*;
 public class IssuedDeviceRecordController{
     @Autowired
     IssuedDeviceRecordService src;
-    @PostMapping
+    @PostMapping("/POST")
     public IssuedDeviceRecord issueDevice(@RequestBody IssuedDeviceRecord record){
         return src.issueDevice(record);
     }
     
-    @PutMapping("{id}/return")
+    @PutMapping("/PUT/{id}/return")
     public IssuedDeviceRecord returnDevice(@PathVariable Long recordId){
         return src.returnDevice(recordId);
     }
-    @GetMapping("employee/{employeeId}")
+    @GetMapping("/GET/employee/{employeeId}")
     public IssuedDeviceRecord getIssuedDevicesByEmployee(@PathVariable Long employeeId){
         return src.getIssuedDevicesByEmployee(employeeId);
     }
