@@ -16,8 +16,7 @@ public class IssuedDeviceRecord{
     private LocalDate issuedDate;
     @NotNull
     private LocalDate returnedDate;
-    private String ISSUED;
-    private String RETURNED;
+    private String status;
     public IssuedDeviceRecord(){}
     public IssuedDeviceRecord(Long id, Long employeeId, LocalDate issuedDate, LocalDate returnedDate, String iSSUED,
             String rETURNED) {
@@ -52,11 +51,11 @@ public class IssuedDeviceRecord{
     public void setReturnedDate(LocalDate returnedDate) {
         this.returnedDate = returnedDate;
     }
-    public String getISSUED() {
-        return ISSUED;
+    public String getStatus() {
+        return status;
     }
-    public void setISSUED(String iSSUED) {
-        ISSUED = iSSUED;
+    public void setStatus(String status) {
+        this.status=staus;
     }
     public String getRETURNED() {
         return RETURNED;
