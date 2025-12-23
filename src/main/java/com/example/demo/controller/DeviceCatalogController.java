@@ -12,15 +12,15 @@ import java.util.*;
 public class DeviceCatalogController{
     @Autowired
     DeviceCatalogService src;
-    @PostMapping("/POST")
+    @PostMapping("POST/")
     public DeviceCatalogItem createItem(@RequestBody DeviceCatalogItem item){
         return src.createItem(item);
     }
-    @PutMapping("/PUT/{id}/active")
+    @PutMapping("PUT/{id}/active")
     public DeviceCatalogItem updateActiveStatus(@PathVariable Long id,@PathVariable boolean active){
         return src.updateActiveStatus(id,active);
     }
-    @GetMapping("/GET")
+    @GetMapping("GET/")
     public List<DeviceCatalogItem> getAllItems(){
         return src.getAllItems();
     }
