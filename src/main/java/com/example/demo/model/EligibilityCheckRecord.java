@@ -75,12 +75,10 @@ public class EligibilityCheckRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // 🔹 Many checks can belong to one employee
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id", nullable = false)
     private EmployeeProfile employee;
 
-    // 🔹 Many checks can belong to one device
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "device_item_id", nullable = false)
     private DeviceCatalogItem deviceItem;
@@ -94,17 +92,12 @@ public class EligibilityCheckRecord {
     @Column(nullable = false, updatable = false)
     private LocalDateTime checkedAt;
 
-    // 🔹 Auto-populate timestamp
     @PrePersist
     protected void onCheck() {
         this.checkedAt = LocalDateTime.now();
     }
-
-    // 🔹 No-args constructor (required by JPA)
     public EligibilityCheckRecord() {
     }
-
-    // 🔹 Constructor with core fields
     public EligibilityCheckRecord(EmployeeProfile employee,
                                   DeviceCatalogItem deviceItem,
                                   Boolean isEligible,
@@ -115,7 +108,6 @@ public class EligibilityCheckRecord {
         this.reason = reason;
     }
 
-    // 🔹 Getters and Setters
     public Long getId() {
         return id;
     }
