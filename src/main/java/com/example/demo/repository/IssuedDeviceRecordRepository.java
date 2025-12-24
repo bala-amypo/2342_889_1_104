@@ -4,4 +4,5 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.IssuedDeviceRecord;
 @Repository
 public interface IssuedDeviceRecordRepository extends JpaRepository<IssuedDeviceRecord,Long>{
+    Optional<IssuedDeviceRecord> findByDeviceCode();
 }
