@@ -3,5 +3,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.example.demo.model.DeviceCatalogItem;
 @Repository
-public interface DeviceCatalogItemRepository extends JpaRepository<DeviceCatalogItem,Long>{
+public interface DeviceCatalogItemRepository extends JpaRepository<DeviceCatalogItem,Long>{\
+    Optional<IssuedDeviceRecord> findByDeviceCode(String deviceCode);
 }

@@ -6,4 +6,5 @@ import java.util.*;
 @Repository
 public interface PolicyRuleRepository extends JpaRepository<PolicyRule,String>{
     List<PolicyRule> findByActiveTrue();
+    Optional<PolicyRule>findByRuleCode()
 }
