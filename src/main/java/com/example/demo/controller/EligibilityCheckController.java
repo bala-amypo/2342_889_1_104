@@ -1,3 +1,5 @@
+
+
 package com.example.demo.controller;
 
 import com.example.demo.model.EligibilityCheckRecord;
@@ -24,7 +26,7 @@ public class EligibilityCheckController {
 
     @GetMapping("/employee/{employeeId}")
     public ResponseEntity<List<EligibilityCheckRecord>> getChecksByEmployee(@PathVariable Long employeeId) {
-        List<EligibilityCheckRecord> checks = eligibilityService.getChecksByEmployee(employeeId);
+        List<EligibilityCheckRecord> checks = eligibilityService.getCheckByEmployee(employeeId);
         return ResponseEntity.ok(checks);
     }
 }

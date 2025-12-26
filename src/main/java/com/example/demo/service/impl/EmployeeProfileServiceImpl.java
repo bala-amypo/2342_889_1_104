@@ -28,7 +28,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService {
     }
 
     @Override
-    public EmployeeProfile updateEmployeeStatus(Long id, Boolean active) {
+    public EmployeeProfile updateEmployeeStatus(Long id, boolean active) {
         EmployeeProfile emp = employeeRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
         emp.setActive(active);
