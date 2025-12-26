@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/eligibility")
-public class EligibilityController {
+public class EligibilityCheckController {
     private final EligibilityCheckService eligibilityService;
 
-    public EligibilityController(EligibilityCheckService eligibilityService) {
+    public EligibilityCheckController(EligibilityCheckService eligibilityService) {
         this.eligibilityService = eligibilityService;
     }
 

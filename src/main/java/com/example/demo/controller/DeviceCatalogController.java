@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/devices")
-public class DeviceController {
+public class DeviceCatalogController {
     private final DeviceCatalogService deviceService;
 
-    public DeviceController(DeviceCatalogService deviceService) {
+    public DeviceCatalogController(DeviceCatalogService deviceService) {
         this.deviceService = deviceService;
     }
 

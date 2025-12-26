@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/policies")
-public class PolicyController {
+public class PolicyRuleController {
     private final PolicyRuleService policyService;
 
-    public PolicyController(PolicyRuleService policyService) {
+    public PolicyRuleController(PolicyRuleService policyService) {
         this.policyService = policyService;
     }
 
