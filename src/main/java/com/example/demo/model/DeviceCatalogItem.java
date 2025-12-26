@@ -32,7 +32,6 @@ public class DeviceCatalogItem {
         this.active = active;
     }
 
-    // getters and setters
     public Long getId() {
         return id;
     }

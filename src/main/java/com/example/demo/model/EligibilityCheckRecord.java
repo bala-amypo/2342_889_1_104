@@ -21,7 +21,6 @@ public class EligibilityCheckRecord {
 
     private LocalDateTime checkedAt;
 
-    // Automatically set checkedAt before insert
     @PrePersist
     public void prePersist() {
         if (this.checkedAt == null) {
@@ -29,11 +28,9 @@ public class EligibilityCheckRecord {
         }
     }
 
-    // No-argument constructor
     public EligibilityCheckRecord() {
     }
 
-    // Parameterized constructor
     public EligibilityCheckRecord(Long employeeId, Long deviceItemId,
                                   Boolean isEligible, String reason) {
         this.employeeId = employeeId;

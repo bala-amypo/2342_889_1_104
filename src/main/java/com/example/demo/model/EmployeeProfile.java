@@ -25,17 +25,14 @@ public class EmployeeProfile {
 
     private LocalDateTime createdAt;
 
-    // Automatically set createdAt before insert
     @PrePersist
     public void setCreatedAt() {
         this.createdAt = LocalDateTime.now();
     }
 
-    // No-argument constructor
     public EmployeeProfile() {
     }
 
-    // Parameterized constructor
     public EmployeeProfile(String employeeId, String fullName, String email,
                            String department, String jobRole, Boolean active) {
         this.employeeId = employeeId;
