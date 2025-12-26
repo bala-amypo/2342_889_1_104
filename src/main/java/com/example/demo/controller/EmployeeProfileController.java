@@ -1,31 +1,42 @@
 package com.example.demo.controller;
+
 import com.example.demo.model.EmployeeProfile;
 import com.example.demo.service.EmployeeProfileService;
-
-import org.springframework.http.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import java.util.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/employees")
-public class EmployeeProfileController{
-    @Autowired
-    EmployeeProfileService src;
-    @PostMapping("POST/")
-    public EmployeeProfile createEmployee(@RequestBody EmployeeProfile employee){
-        return src.createEmployee(employee);
+public class EmployeeController {
+    private final EmployeeProfileService employeeService;
+
+    public EmployeeController(EmployeeProfileService employeeService) {
+        this.employeeService = employeeService;
     }
-    @GetMapping("GET/{id}")
-    public EmployeeProfile getEmployeeById(@PathVariable Long id){
-        return src.getEmployeeById(id);
+
+    @PostMapping
+    public ResponseEntity<EmployeeProfile> createEmployee(@RequestBody EmployeeProfile employee) {
+        EmployeeProfile created = employeeService.createEmployee(employee);
+        return ResponseEntity.ok(created);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EmployeeProfile> getEmployee(@PathVariable Long id) {
+        EmployeeProfile employee = employeeService.getEmployeeById(id);
+        return ResponseEntity.ok(employee);
+    }
+
     @GetMapping
-    public List<EmployeeProfile> getAllEmployees(){
-        return src.getAllEmployees();
+    public ResponseEntity<List<EmployeeProfile>> getAllEmployees() {
+        List<EmployeeProfile> employees = employeeService.getAllEmployees();
+        return ResponseEntity.ok(employees);
     }
-    @PutMapping("PUT/{id}/status")
-    public EmployeeProfile updateEmployeeStatus(@PathVariable Long id,@PathVariable boolean active){
-        return src.updateEmployeeStatus(id,active);
+
+    @PutMapping("/{id}/status")
+    public ResponseEntity<EmployeeProfile> updateEmployeeStatus(@PathVariable Long id, @RequestParam Boolean active) {
+        EmployeeProfile updated = employeeService.updateEmployeeStatus(id, active);
+        return ResponseEntity.ok(updated);
     }
 }
