@@ -11,7 +11,7 @@ public class UserAccount {
     
     private String email;
     private String role;
-
+    private String password;
     // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -24,5 +24,6 @@ public class UserAccount {
     public String getPassword() {
     return password;
 }
+    pu
 
 }
