@@ -24,7 +24,7 @@ public class UserAccount {
     public String getPassword() {
     return password;
 }
-    public String setPassword(String password){
+    public void setPassword(String password){
         this.password=password;
     }
 
