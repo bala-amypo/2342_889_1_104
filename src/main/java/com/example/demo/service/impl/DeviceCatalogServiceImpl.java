@@ -28,7 +28,7 @@ public class DeviceCatalogServiceImpl implements DeviceCatalogService {
     }
 
     @Override
-    public DeviceCatalogItem updateActiveStatus(Long id, Boolean active) {
+    public DeviceCatalogItem updateActiveStatus(Long id, boolean active) {
         DeviceCatalogItem item = deviceRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Device not found"));
         item.setActive(active);
