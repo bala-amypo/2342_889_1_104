@@ -25,4 +25,3 @@ public class AuthController {
         return "JWT_TOKEN"; // dummy
     }
 }
-device
