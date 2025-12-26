@@ -1,16 +1,16 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.IssuedDeviceRecord;
-import com.example.demo.service.IssuedDeviceService;
+import com.example.demo.service.IssuedDeviceRecordService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/issued-devices")
 public class IssuedDeviceRecordController {
-    private final IssuedDeviceService issuedDeviceService;
+    private final IssuedDeviceRecordService issuedDeviceService;
 
-    public IssuedDeviceRecordController(IssuedDeviceService issuedDeviceService) {
+    public IssuedDeviceRecordController(IssuedDeviceRecordService issuedDeviceService) {
         this.issuedDeviceService = issuedDeviceService;
     }
 
