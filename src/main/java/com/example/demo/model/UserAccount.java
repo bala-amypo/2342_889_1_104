@@ -21,11 +21,9 @@ public class UserAccount {
 
     private Boolean active;
 
-    // No-argument constructor
     public UserAccount() {
     }
 
-    // Parameterized constructor
     public UserAccount(String fullName, String email,
                        String passwordHash, String role,
                        Boolean active) {

@@ -11,7 +11,6 @@ import com.example.demo.model.IssuedDeviceRecord;
 public interface IssuedDeviceRecordRepository
         extends JpaRepository<IssuedDeviceRecord, Long> {
 
-    // ===== Used by IssuedDeviceRecordServiceImpl =====
     List<IssuedDeviceRecord> findByEmployeeId(Long employeeId);
 
     List<IssuedDeviceRecord> findByEmployeeIdAndStatus(Long employeeId, String status);
@@ -21,7 +20,6 @@ public interface IssuedDeviceRecordRepository
     Optional<IssuedDeviceRecord> findByEmployeeIdAndDeviceItemIdAndStatus(
             Long employeeId, Long deviceItemId, String status);
 
-    // ===== Used DIRECTLY by TESTS =====
     @Query("""
         SELECT r FROM IssuedDeviceRecord r
         WHERE r.employeeId = :empId

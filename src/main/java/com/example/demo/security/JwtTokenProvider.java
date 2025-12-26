@@ -12,13 +12,11 @@ public class JwtTokenProvider {
     private String secretKey;
     private int validityInMs;
 
-    // ✅ constructor REQUIRED by test cases
     public JwtTokenProvider(String secretKey, int validityInMs) {
         this.secretKey = secretKey;
         this.validityInMs = validityInMs;
     }
 
-    // ✅ default constructor for Spring
     public JwtTokenProvider() {
         this.secretKey = "test-secret-key";
         this.validityInMs = 3600000;

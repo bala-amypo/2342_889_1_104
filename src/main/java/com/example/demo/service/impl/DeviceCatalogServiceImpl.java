@@ -22,18 +22,15 @@ public class DeviceCatalogServiceImpl implements DeviceCatalogService {
     @Override
     public DeviceCatalogItem createItem(DeviceCatalogItem item) {
 
-        // ✅ Invalid max limit
         if (item.getMaxAllowedPerEmployee() == null ||
             item.getMaxAllowedPerEmployee() <= 0) {
             throw new BadRequestException("maxAllowedPerEmployee");
         }
 
-        // ✅ Duplicate device code
         if (repo.findByDeviceCode(item.getDeviceCode()).isPresent()) {
             throw new BadRequestException("Device code already exists");
         }
 
-        // default active = true
         if (item.getActive() == null) {
             item.setActive(true);
         }

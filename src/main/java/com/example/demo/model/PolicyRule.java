@@ -19,11 +19,9 @@ public class PolicyRule {
     private Integer maxDevicesAllowed;
     private Boolean active;
 
-    // No-argument constructor
     public PolicyRule() {
     }
 
-    // Parameterized constructor
     public PolicyRule(String ruleCode, String description,
                       String appliesToRole, String appliesToDepartment,
                       Integer maxDevicesAllowed, Boolean active) {

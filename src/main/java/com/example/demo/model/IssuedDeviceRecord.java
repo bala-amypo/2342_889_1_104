@@ -17,13 +17,10 @@ public class IssuedDeviceRecord {
     private LocalDate issuedDate;
     private LocalDate returnedDate;
 
-    private String status; // ISSUED / RETURNED
-
-    // No-argument constructor
+    private String status; 
     public IssuedDeviceRecord() {
     }
 
-    // Parameterized constructor
     public IssuedDeviceRecord(Long employeeId, Long deviceItemId) {
         this.employeeId = employeeId;
         this.deviceItemId = deviceItemId;
@@ -31,7 +28,6 @@ public class IssuedDeviceRecord {
         this.status = "ISSUED";
     }
 
-    // getters and setters
     public Long getId() {
         return id;
     }
