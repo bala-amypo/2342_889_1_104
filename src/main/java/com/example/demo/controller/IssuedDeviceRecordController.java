@@ -1,22 +1,46 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.IssuedDeviceRecord;
-import com.example.demo.service.IssuedDeviceRecordService;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.model.IssuedDeviceRecord;
+import com.example.demo.service.IssuedDeviceRecordService;
 
 @RestController
 @RequestMapping("/api/issued-devices")
 public class IssuedDeviceRecordController {
-    private final IssuedDeviceRecordService issuedDeviceService;
 
-    public IssuedDeviceRecordController(IssuedDeviceRecordService issuedDeviceService) {
-        this.issuedDeviceService = issuedDeviceService;
+    private final IssuedDeviceRecordService service;
+
+    public IssuedDeviceRecordController(IssuedDeviceRecordService service) {
+        this.service = service;
     }
 
+    // POST /api/issued-devices
+    @PostMapping
+    public ResponseEntity<IssuedDeviceRecord> issueDevice(
+            @RequestBody IssuedDeviceRecord record) {
+        return ResponseEntity.ok(service.issueDevice(record));
+    }
+
+    // PUT /api/issued-devices/{id}/return
     @PutMapping("/{id}/return")
     public ResponseEntity<IssuedDeviceRecord> returnDevice(@PathVariable Long id) {
-        IssuedDeviceRecord returned = issuedDeviceService.returnDevice(id);
-        return ResponseEntity.ok(returned);
+        return ResponseEntity.ok(service.returnDevice(id));
+    }
+
+    // GET /api/issued-devices/employee/{employeeId}
+    @GetMapping("/employee/{employeeId}")
+    public ResponseEntity<List<IssuedDeviceRecord>> getByEmployee(
+            @PathVariable Long employeeId) {
+        return ResponseEntity.ok(service.getByEmployeeId(employeeId));
+    }
+
+    // GET /api/issued-devices/{id}
+    @GetMapping("/{id}")
+    public ResponseEntity<IssuedDeviceRecord> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(service.getById(id));
     }
 }
