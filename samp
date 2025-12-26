@@ -1,78 +1,9 @@
 openapi
-package com.example.demo.config;
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.servers.Server;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import java.util.List;
-
-@Configuration
-public class OpenApiConfig {
-
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-                // You need to change the port as per your server
-                .servers(List.of(
-                        new Server().url("https://9084.pro604cr.amypo.ai")
-                ));
-        }
-}
 security
-package com.example.demo.security;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-
-@Configuration
-public class SecurityConfig {
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
-        http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll()
-            )
-            .formLogin(form -> form.disable())
-            .httpBasic(basic -> basic.disable());
-
-        return http.build();
-    }
-}
 auth controller
-package com.example.demo.controller;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import com.example.demo.model.UserAccount;
-import com.example.demo.repository.UserAccountRepository;
-@RestController
-@RequestMapping("/auth")
-public class AuthController {
-
-    private final UserAccountRepository userRepo;
-
-    public AuthController(UserAccountRepository userRepo) {
-        this.userRepo = userRepo;
-    }
-
-    @PostMapping("/register")
-    public UserAccount register(@RequestBody UserAccount user) {
-        return userRepo.save(user);
-    }
-
-    @PostMapping("/login")
-    public String login() {
-        return "JWT_TOKEN"; // dummy
-    }
-}
-devicecont
+cont
 
 eligicont
 
