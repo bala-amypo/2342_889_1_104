@@ -21,9 +21,11 @@ public class UserAccount {
     
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
-    public String getPassword() {
+    
+    public String setPassword(){
+        this.password=password;
+    }
+public String getPassword() {
     return password;
 }
-    pu
-
 }
