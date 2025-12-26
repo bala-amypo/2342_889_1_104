@@ -18,27 +18,23 @@ public class IssuedDeviceRecordController {
         this.service = service;
     }
 
-    // POST /api/issued-devices
     @PostMapping
     public ResponseEntity<IssuedDeviceRecord> issueDevice(
             @RequestBody IssuedDeviceRecord record) {
         return ResponseEntity.ok(service.issueDevice(record));
     }
 
-    // PUT /api/issued-devices/{id}/return
     @PutMapping("/{id}/return")
     public ResponseEntity<IssuedDeviceRecord> returnDevice(@PathVariable Long id) {
         return ResponseEntity.ok(service.returnDevice(id));
     }
 
-    // GET /api/issued-devices/employee/{employeeId}
     @GetMapping("/employee/{employeeId}")
     public ResponseEntity<List<IssuedDeviceRecord>> getByEmployee(
             @PathVariable Long employeeId) {
         return ResponseEntity.ok(service.getByEmployeeId(employeeId));
     }
 
-    // GET /api/issued-devices/{id}
     @GetMapping("/{id}")
     public ResponseEntity<IssuedDeviceRecord> getById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getById(id));

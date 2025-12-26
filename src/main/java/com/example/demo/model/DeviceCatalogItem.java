@@ -18,11 +18,9 @@ public class DeviceCatalogItem {
     private Integer maxAllowedPerEmployee;
     private Boolean active;
 
-    // No-argument constructor
     public DeviceCatalogItem() {
     }
 
-    // Parameterized constructor
     public DeviceCatalogItem(String deviceCode, String deviceType,String model, Integer maxAllowedPerEmployee,Boolean active) {
                              
         this.deviceCode = deviceCode;
