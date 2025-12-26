@@ -17,26 +17,22 @@ public class DeviceCatalogController {
         this.service = service;
     }
 
-    // POST /api/devices
     @PostMapping
     public DeviceCatalogItem createDevice(
             @RequestBody DeviceCatalogItem item) {
         return service.createItem(item);
     }
 
-    // GET /api/devices
     @GetMapping
     public List<DeviceCatalogItem> getAllDevices() {
         return service.getAllItems();
     }
 
-    // GET /api/devices/{id}
     @GetMapping("/{id}")
     public DeviceCatalogItem getDeviceById(@PathVariable Long id) {
         return service.getItemById(id);
     }
 
-    // PUT /api/devices/{id}/active?active=true
     @PutMapping("/{id}/active")
     public DeviceCatalogItem updateActiveStatus(
             @PathVariable Long id,
@@ -44,7 +40,6 @@ public class DeviceCatalogController {
         return service.updateActiveStatus(id, active);
     }
 
-    // DELETE /api/devices/{id}
     @DeleteMapping("/{id}")
     public void deleteDevice(@PathVariable Long id) {
         service.deleteItem(id);
