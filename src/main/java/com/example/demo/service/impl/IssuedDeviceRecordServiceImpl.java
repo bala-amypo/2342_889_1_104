@@ -6,6 +6,7 @@ import com.example.demo.model.IssuedDeviceRecord;
 import com.example.demo.repository.IssuedDeviceRecordRepository;
 import com.example.demo.service.IssuedDeviceRecordService;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class IssuedDeviceRecordServiceImpl implements IssuedDeviceRecordService {
@@ -26,5 +27,10 @@ public class IssuedDeviceRecordServiceImpl implements IssuedDeviceRecordService 
         
         record.setStatus("RETURNED");
         return issuedRepo.save(record);
+    }
+
+    @Override
+    public List<IssuedDeviceRecord> getIssuedDevicesByEmployee(Long employeeId) {
+        return issuedRepo.findAll();
     }
 }
