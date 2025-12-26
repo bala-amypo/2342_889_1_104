@@ -21,11 +21,11 @@ public class UserAccount {
     
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
-    
-    public String setPassword(){
+    public String getPassword() {
+        return password;
+    }
+    public String setPassword(String password){
         this.password=password;
     }
-public String getPassword() {
-    return password;
-}
+
 }
