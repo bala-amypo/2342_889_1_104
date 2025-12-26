@@ -31,8 +31,10 @@ public class AuthController {
         user.setId(1L);
         user.setEmail(request.getEmail());
         user.setRole("USER");
-        
-        String token = tokenProvider.generateToken(user);
+        String token = jwtTokenProvider.generateToken(userAccount.getEmail());
+
+S       String token = jwtTokenProvider.generateToken(userAccount.getEmail());
+
         AuthResponse response = new AuthResponse(token, user.getEmail(), user.getRole());
         return ResponseEntity.ok(response);
     }
