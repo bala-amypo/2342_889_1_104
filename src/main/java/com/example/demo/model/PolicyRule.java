@@ -33,7 +33,6 @@ public class PolicyRule {
         this.active = active;
     }
 
-    // getters and setters
     public Long getId() {
         return id;
     }
